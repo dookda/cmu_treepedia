@@ -1,0 +1,11 @@
+version: '3.3'
+services:
+  flask:
+    container_name: rtk_flask
+    build: ./flaskapi
+    restart: always
+    volumes:
+      - ./flaskapi:/app/flaskapi
+    ports:
+      - "3100:3100"
+    command: bash -c "cd flaskapi && python3 app.py"
